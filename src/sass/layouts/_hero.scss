@@ -1,0 +1,136 @@
+body {
+}
+
+.hero {
+  @include tablet {
+    margin: 0 auto;
+  }
+
+  @include desktop {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+.hero__container {
+  background-image: url(../images/hero-bg/img_hero-bg-mouse_1x.png),
+    url(../images/hero-bg/img_hero-bg-headset_1x.png),
+    url(../images/hero-bg/img_hero-bg-key_1x.png),
+    url(../images/hero-bg/img_hero-bg_1x.jpg);
+  background-repeat: no-repeat;
+  background-blend-mode: luminosity;
+  background-position: 5% 35%, 105% 15%, 70% 95%, 77%;
+  background-size: 99px, 186px, 88px, cover;
+
+  @include retina {
+    background-image: url(../images/hero-bg/img_hero-bg-mouse_2x.png),
+      url(../images/hero-bg/img_hero-bg-headset_1x.png),
+      url(../images/hero-bg/img_hero-bg-key_2x.png),
+      url(../images/hero-bg/img_hero-bg_2x.jpg);
+  }
+
+  @include tablet {
+    background-image: url(../images/hero-bg/img_hero-bg_2t_1x.png),
+      url(../images/hero-bg/img_hero-bg_2x.jpg);
+
+    background-position: 95% 175px, 70% 100%;
+    background-repeat: no-repeat;
+    background-size: 50%, 120%;
+
+    @include retina {
+      background-image: url(../images/hero-bg/img_hero-bg_2t_2x.png),
+        url(../images/hero-bg/img_hero-bg_2x.jpg);
+    }
+  }
+
+  @include desktop {
+    background-image: url(../images/hero-bg/img_hero-bg_1d_1x.png),
+      url(../images/hero-bg/img_hero-bg_1x.jpg);
+    background-position: 85% 205px, 100% 0;
+    background-size: auto;
+
+    @include retina {
+      background-image: url(../images/hero-bg/img_hero-bg_1d_2x.png),
+        url(../images/hero-bg/img_hero-bg_2x.jpg);
+      background-size: 611px, 100%;
+    }
+  }
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 284px 37px 127px 36px;
+
+  text-align: center;
+
+  @include tablet {
+    align-items: flex-start;
+    padding: 290px 0 180px 0;
+  }
+
+  @include desktop {
+    padding: 316px 0 209px 102px;
+  }
+}
+
+.hero__title {
+  margin-bottom: 25px;
+
+  font-weight: 600;
+  font-size: 32px;
+  line-height: calc(38px / 32px);
+  text-align: center;
+
+  color: $main-text-color;
+
+  @include tablet {
+    width: 388px;
+    margin-bottom: 94px;
+
+    font-size: 56px;
+    line-height: calc(66px / 56px);
+    text-align: left;
+  }
+
+  @include desktop {
+    width: 515px;
+    margin-bottom: 40px;
+
+    font-size: 64px;
+    line-height: calc(75px / 64px);
+  }
+}
+
+.hero__btn {
+  display: inline-block;
+  padding: 16px 20px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(19px / 16px);
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 16px;
+  color: $green-text-color;
+  background-color: $secondary-text-color;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 8px 20px rgba(134, 229, 67, 0.5),
+      0px 4px 10px rgba(255, 255, 255, 0.1);
+  }
+
+  @include tablet {
+    font-size: 32px;
+    line-height: calc(38px / 32px);
+  }
+}
+
+.hero__br--none {
+  @include tablet {
+    display: none;
+  }
+}
