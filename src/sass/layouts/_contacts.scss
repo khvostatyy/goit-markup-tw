@@ -11,49 +11,6 @@
     @extend %bg_lines;
 }
 
-    // background: $green-text-color;
-    
-    // background-image: url(../images/contacts-part/img_vector_\ 26_1x.png),
-    //     url(../images/contacts-part/img_vector_\ 27_1x.png);
-    //     background-repeat: no-repeat;
-    //     background-position: -104px 48px, -99px 55px;
-
-    //     @include retina {
-    //         background-image: url(../images/contacts-part/img_vector_\ 26_2x.png),
-    //             url(../images/contacts-part/img_vector_\ 27_2x.png);
-    //             background-position: -329px 25px, -321px 34px;
-    //     }                
-    // @include tablet {
-    //     padding-bottom: 120px;
-        
-    //     background-image: url(../images/contacts-part/img_vector_\ 24_1x.png),
-    //         url(../images/contacts-part/img_vector_\ 22_1x.png),
-    //         url(../images/contacts-part/img_contacts_bg_2_1x.png);
-    //         background-repeat: no-repeat;
-    //         background-position: -30px 163px, -28px 171px, 0 0;
-                    
-    //     @include retina {
-    //         background-image: url(../images/contacts-part/img_vector_\ 24_2x.png),
-    //             url(../images/contacts-part/img_vector_\ 22_2x.png),
-    //             url(../images/contacts-part/img_contacts_bg_2_2x.png);
-    //             background-position: -470px 145px, -472px 156px, 0 0;
-    //     }
-    // }
-
-    // @include desktop {
-    //     background-image: url(../images/contacts-part/img_vector_\ 24_1x.png),
-    //         url(../images/contacts-part/img_vector_\ 22_1x.png),
-    //         url(../images/contacts-part/img_contacts_bg_3_1x.png);
-    //         background-position: -26px 162px, -24px 171px, 0 0;
-    
-    //     @include retina {
-    //         background-image: url(../images/contacts-part/img_vector_\ 24_2x.png),
-    //             url(../images/contacts-part/img_vector_\ 22_2x.png),
-    //             url(../images/contacts-part/img_contacts_bg_3_2x.png);
-    //             background-position: -468px 145px, -472px 156px, 0 0;
-    //     }
-    // }
-
 .contacts-part__picture {
     @media screen and (max-width: 767px) {
         margin-left: -16px;
@@ -107,13 +64,12 @@
 .contacts-part__contacts {
     margin-bottom: 24px;
     @include tablet {
-       margin-bottom: 40px;
-    //    margin-right: 200px;
-   }
+        margin-bottom: 40px;
+    }
 
     @include desktop {
-       margin-bottom: 0;
-       margin-right: 0;
+        margin-bottom: 0;
+        margin-right: 0;
     }
 }
 
@@ -170,14 +126,13 @@
 }
 
 .contacts-part__subtitle {
-    padding-bottom: 8px;
+    margin-bottom: 8px;
     font-weight: 400;
     font-size: 16px;
     line-height: calc(19 / 16);
     color: $main-text-color;
 
     @include tablet {
-        // padding-bottom: 0;
         font-size: 24px;
         line-height: calc(28 / 24);
     }
@@ -195,6 +150,10 @@
         font-size: 24px;
         line-height: calc(28 / 24);
     }
+}
+
+.contacts-part__tel:not(:last-child) {
+margin-bottom: 8px;
 }
 
 .contacts-form {    
@@ -267,7 +226,8 @@
     border-bottom: 1px solid #86E543;
     border-top: none;
     border-right: none;
-    border-left: none;   
+    border-left: none;
+    outline: none;   
 }
 
 .register-form__wrap {    
@@ -275,7 +235,9 @@
     padding: 0;
 }
 
-.register-form__heading {    
+.register-form__heading {   
+    display: block; 
+    margin-bottom: 4px;
     font-weight: 400;
     font-size: 16px;
     line-height: calc(20 / 16);
@@ -289,9 +251,11 @@
 .register-form__message {
     width: 100%;
     display: block;
+    resize: none;
     background-color: $green-text-color;
     color: $main-text-color;    
     border: 1px solid #86E543;
+    outline: none;
 }
 
 .register-form__btn {
@@ -316,7 +280,11 @@
     font-size: 16px;
     line-height: calc(19 / 16);  
     text-transform: uppercase;
-
+    transition: filter $transition-time;
+    cursor: pointer;
+    &:hover, &:focus {
+        filter: drop-shadow(0px 4px 10px rgba(255, 255, 255, 0.1)) drop-shadow(0px 4px 20px rgba(255, 255, 255, 0.4));
+    }
     @include tablet {
         width: 306px;
         margin-top: 34px;

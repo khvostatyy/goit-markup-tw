@@ -1,6 +1,3 @@
-body {
-}
-
 .hero {
   @include tablet {
     margin: 0 auto;
@@ -116,6 +113,7 @@ body {
   border-radius: 16px;
   color: $green-text-color;
   background-color: $secondary-text-color;
+  transition: box-shadow $transition-time;
 
   &:hover,
   &:focus {
